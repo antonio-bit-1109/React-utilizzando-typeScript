@@ -7,7 +7,13 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 
-const MainComponent: React.FC = () => {
+interface propType {
+    proppino: string;
+}
+
+const MainComponent: React.FC<propType> = (props) => {
+    const { proppino } = props;
+
     const dispatch = useDispatch();
     const myObj = useSelector((state: PincoPallino) => state.queryState.ObjArray); // Specifica il tipo dello stato radice
     console.log("mioOggettoVUOTO POI FETCHATO", myObj);
@@ -51,7 +57,11 @@ const MainComponent: React.FC = () => {
         <div>
             {myObj && (
                 <Container>
-                    {" "}
+                    <Row>
+                        <Col>
+                            <div>{proppino}</div>
+                        </Col>
+                    </Row>
                     <Row>
                         {myObj.map((element) => (
                             <Col sm={12} md={6} lg={5} xl={4} key={element.id}>
