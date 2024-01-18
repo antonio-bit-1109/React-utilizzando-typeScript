@@ -1,20 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { PincoPallino } from "../redux/store/store";
-import {
-    setObjArray,
-    /*   setevents,
-    seturl,
-    setupdated_at,
-    settitle,
-    setsummary,
-    setpublished_at,
-    setnews_site,
-    setLaunches,
-    setImage_url,
-    setid,
-    setFeatured, */
-} from "../redux/reducers/stateReducers";
+import { setObjArray } from "../redux/reducers/stateReducers";
 import { Col, Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
@@ -67,7 +54,7 @@ const MainComponent: React.FC = () => {
                     {" "}
                     <Row>
                         {myObj.map((element) => (
-                            <Col sm={12} md={8} lg={6} xl={4} key={element.id}>
+                            <Col sm={12} md={6} lg={5} xl={4} key={element.id}>
                                 <Card className="my-5">
                                     <img src={element.image_url} alt="immagine" />
                                     <Card.Body>
