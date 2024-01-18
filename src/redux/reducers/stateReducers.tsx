@@ -1,15 +1,13 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-// Definizione del tipo dello stato dello slice
-interface MyState {
-    cityname: string;
-
-    // Sostituisci 'any' con il tipo effettivo dei dati meteo
+/* definisco il tipo dellostato nell interfaccia e lo esporto  */
+export interface InitialStateType {
+    myObj: null | Object;
 }
 
-// Inizializzazione dello stato
-const initialState: MyState = {
-    cityname: "",
+// inizializzo lo stato e gli do il tipo
+const initialState: InitialStateType = {
+    myObj: null,
 };
 
 // Creazione del slice
@@ -17,15 +15,12 @@ const storeSlice = createSlice({
     name: "myState",
     initialState,
     reducers: {
-        setCityname: (state, action: PayloadAction<string>) => {
-            state.cityname = action.payload;
+        setCityname: (state, action: PayloadAction<null | Object>) => {
+            state.myObj = action.payload;
         },
     },
 });
 
-// Estrazione delle azioni e del riduttore
+// Esportazione delle azioni e del riduttore
 export const { setCityname } = storeSlice.actions;
 export default storeSlice.reducer;
-export interface StoreState {
-    // Definizione del tuo stato
-}
