@@ -16,7 +16,7 @@ const storeSlice = createSlice({
     name: "myState",
     initialState,
     reducers: {
-        setObjArray: (state, action: PayloadAction<null | ObjectFetch[]>) => {
+        setObjArray: (state, action: PayloadAction<ObjectFetch[]>) => {
             state.ObjArray = action.payload;
         },
     },

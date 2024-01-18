@@ -36,6 +36,7 @@ const MainComponent: React.FC = () => {
             method: "GET",
             headers: {},
         };
+
         fetch("https://api.spaceflightnewsapi.net/v4/articles", options)
             .then((response) => {
                 if (!response.ok) {
